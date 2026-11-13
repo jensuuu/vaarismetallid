@@ -1,0 +1,14 @@
+[package]
+name = "vaarismetallid"
+version = "0.1.0"
+edition = "2021"
+description = "Väärismetallide hinnad ja lihtsad osta/müü soovitused"
+
+[dependencies]
+# HTTP päringud (blocking = lihtne, ilma async-koodita)
+# rustls-tls = ei vaja OpenSSL-i, töötab Windowsis, Linuxis ja macOS-is ühtmoodi
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls"] }
+# JSON-i lugemine Rusti struktuuridesse
+serde = { version = "1", features = ["derive"] }
+# Värviline tekst terminalis
+colored = "2"
